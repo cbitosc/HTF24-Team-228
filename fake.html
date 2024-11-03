@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - My E-commerce Site</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styles for filters */
+        .filters {
+            padding: 20px;
+            background-color: #f0f0f0;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the filter options */
+        }
+
+        .filter-option {
+            margin-right: 15px;
+            margin-bottom: 10px;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the product cards */
+        }
+
+        .product-card {
+            border: 1px solid black; /* Border style */
+            border-radius: 20px; /* Border radius */
+            margin: 10px; /* Spacing between cards */
+            padding: 15px; /* Padding inside the card */
+            text-align: center;
+            width: 250px; /* Fixed width for cards */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better appearance */
+            transition: transform 0.2s; /* Animation effect */
+            background-color: #ffffff; /* Card background color */
+        }
+
+        .product-card:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+            background-color: #f9f9f9; /* Change background color on hover */
+        }
+
+        .product-card img {
+            width: 100%; /* Make images responsive */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 15px; /* Rounded corners for images */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .product-card {
+                width: 100%; /* Full width on smaller screens */
+                margin: 5px 0; /* Adjust margin */
+            }
+
+            .filters {
+                flex-direction: column; /* Stack filters vertically */
+                align-items: flex-start; /* Align to the start */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">GlowGuide</div>
+        <nav>
+            <a href="glow.html">Home</a>
+            <a href="product.html">product</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html" class="cart">Cart (0)</a>
+        </nav>
+    </header>
+
+    <!-- Filters Section -->
+    <section class="filters">
+        <h3>Filter Products</h3>
+        <div class="filter-option">
+            <label for="category">Category:</label>
+            <select id="category" onchange="filterProducts()">
+                <option value="all">All</option>
+                <option value="skincare">Skincare</option>
+                <option value="makeup">Makeup</option>
+            </select>
+        </div>
+        <div class="filter-option">
+            <label for="skin-type">Skin Type:</label>
+            <select id="skin-type" onchange="filterProducts()">
+                <option value="all">All</option>
+                <option value="oily">Oily</option>
+                <option value="dry">Dry</option>
+                <option value="combination">Combination</option>
+            </select>
+        </div>
+        <button onclick="filterProducts()">Apply Filters</button>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h2>Featured Products</h2>
+        <div class="product-list" id="product-list">
+            <!-- Product 1 (Skincare, Oily) -->
+            <div class="product-card" data-category="skincare" data-skin-type="oily">
+              <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/moisturizer-cream/n/3/n/100-soft-moisturizing-cream-nivea-cream-original-imahyjngbsvmxzq8.jpeg?q=90&crop=false" alt="Product 1" width="250" height="250">
+
+                <h3>Skincare Product 1</h3>
+                               <p>₹200</p>
+<div class="stars">
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+
+                </div>
+                <button class='AddCart'>Add to Cart</button>
+                <button class='review'>view review</button>
+
+            </div>
+
+            <!-- Product 2 (Skincare, Dry) -->
+            <div class="product-card" data-category="skincare" data-skin-type="dry">
+                 <img src="https://deyga.in/cdn/shop/files/1-09.jpg?v=1729006201"width="250" height="250">
+               
+                <h3>Skincare Product 2</h3>
+                <p>₹300 </p>
+<div class="stars">
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="empty">☆</span>
+                </div>
+                <button class='AddCart'>Add to Cart</button>
+                <button class='review'>view review</button>
+            </div>
+
+            <!-- Product 3 (Skincare, Combination) -->
+            <div class="product-card" data-category="skincare" data-skin-type="combination">
+                <img src="https://i.pinimg.com/originals/38/27/19/382719e3eec9946577a14063dd78fd69.jpg" alt="Product 3" width="250" height="250">
+             
+                <h3>Skincare Product 3</h3>
+                <p>₹400</p>
+<div class="stars">
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="empty">☆</span>
+                    <span class="empty">☆</span>
+<button class='AddCart'>Add to Cart</button>
+<button class='review'>view review</button>
+
+            </div>
+
+
+            </div>
+
+            <!-- Product 4 (Skincare, Oily) -->
+            <div class="product-card" data-category="Skincare" data-skin-type="combination">
+                <img src="https://i.pinimg.com/564x/8d/e6/fa/8de6fac459db991d7dde22e62eed91d9.jpg" width="250" height="250">
+               
+
+                <h3>Skincare Product 4</h3>
+                <p>₹500</p>
+<div class="stars">
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="empty">☆</span>
+                    <span class="empty">☆</span>
+                </div>
+                <button class='AddCart'>Add to Cart</button>
+                <button class='review'>view review</button>
+
+            </div>
+              <!-- Product 5 (Makeup, Combination) -->
+             <div class="product-card" data-category="makeup" data-skin-type="dry">
+
+              <img src="https://www.anushkabeauty.in/cdn/shop/files/IMG_20240411_205236.jpg?v=1712902049" alt="Product 5" width="250" height="250">
+                <h3>Makeup Product 5</h3>
+                <p>₹400</p>
+<div class="stars">
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="empty">☆</span>
+                </div>
+                <button class='AddCart'>Add to Cart</button>
+                <button class='review'>view review</button>
+
+               </div>
+                <!-- Product 6 (Makeup, Combination) -->
+            <div class="product-card" data-category="makeup" data-skin-type="combination">
+                <img src="https://images-static.nykaa.com/media/catalog/product/f/7/f77418aLAK_8901030366727-first.jpg?tr=cm-pad_resize" width="250" height="250">
+                <h3> Makeup Product 6</h3>
+                <p>₹550</p>
+<div class="stars">
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="empty">☆</span>
+                    <span class="empty">☆</span>
+                </div>
+                <button class='AddCart'>Add to Cart</button>
+                <button class='review'>view review</button>
+
+                  </div>
+             <!-- Product 7(Makeup) -->
+            <div class="product-card" data-category="makeup" data-skin-type="oily">
+            <img src="https://sunshinebeautycentre.com/wp-content/uploads/2023/11/Lakme-Primer-matte-perfect-cover-foundation-mini-c100_sunshine-beauty-centre01-300x300.webp" width="250" height="250">
+                <h3>Makeup Product 7</h3>
+                <p>₹450</p>
+<div class="stars">
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="empty">☆</span>
+                    <span class="empty">☆</span>
+                </div>
+                <button class='AddCart'>Add to Cart</button>
+                <button class='review'>view review</button>
+
+                 </div>
+                 <!-- Product 8(Makeup) -->
+            <div class="product-card" data-category="makeup" data-skin-type="combination">
+            <img src="https://i.pinimg.com/736x/f8/d4/a4/f8d4a4c765c1f28329e4d0611c3f82f1.jpg" width="250" height="250">
+                <h3>Makeup Product 8</h3>
+                <p>₹350</p>
+<div class="stars">
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="filled">★</span>
+                    <span class="empty">☆</span>
+                    <span class="empty">☆</span>
+                </div>
+                <button class='AddCart'>Add to Cart</button> 
+                <button class='review'>view review</button>
+
+
+           </div>
+                    </div>
+    </section>
+
+    <script>
+        function filterProducts() {
+            const category = document.getElementById("category").value;
+            const skinType = document.getElementById("skin-type").value;
+            const products = document.querySelectorAll(".product-card");
+
+            products.forEach((product) => {
+                if ((category === "all" || product.getAttribute("data-category") === category) &&
+                    (skinType === "all" || product.getAttribute("data-skin-type") === skinType)) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
